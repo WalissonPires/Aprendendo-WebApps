@@ -1,0 +1,97 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+	background: #F0F0F0;
+}
+
+.sombra-menu {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.barra-acao {
+	width: 100%;
+	height: 44px;
+	margin: 0;
+	padding: 10px 10px;
+	background: #FDFDFD;
+	display: table;
+	text-align: center;
+	position: fixed;
+	z-index: 50;
+}
+
+.botao-voltar {
+	float: left;
+}
+
+.status {
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
+
+.botao-menu {
+	background: #FDFDFD;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	position: absolute;
+	left: 50%;
+	margin-left: -25px;
+	top: 77%;
+	z-index: 55;
+}
+
+.botao-menu-icon {
+	width: 100%;
+	height: auto;
+}
+
+.menu {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	margin: -10px;
+	top: 56px; 
+	background: #FDFDFD;
+	z-index: 45;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.botao-menu:hover + .menu {
+	opacity: 1;
+}
+
+.chat {
+
+}
+
+footer {
+	width: 100%;
+	height: auto;
+	background: #FDFDFD;
+	position: absolute;
+	bottom: 0;
+}
+
+.mensagem {
+	width: 100%;
+	display: table;
+	padding: 5px;
+}
+
+.mensagem-campo {
+	float: left;
+	width: 70%;
+	margin: 0;
+}
+
+.mensagem-botao-envio {
+	float: right;
+	width: 28%;
+	margin: 0;
+}
