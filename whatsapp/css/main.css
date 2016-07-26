@@ -1,97 +1,311 @@
+
+/*   -------- Geral ----------   */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500,100);
+
 * {
 	box-sizing: border-box;
 }
+
 body {
-	padding: 0;
+	z-index: 0;
 	margin: 0;
-	background: #F0F0F0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-image: url("../img/background-min.png");
+	background-repeat: repeat;
 }
 
-.sombra-menu {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-}
+/*   -------- Barra de ações ---------   */
 
 .barra-acao {
+	z-index: 20;
+	position: relative;
 	width: 100%;
-	height: 44px;
-	margin: 0;
-	padding: 10px 10px;
-	background: #FDFDFD;
+	height: 60px;
+	background: #06584E;
+	color: #FFFFFF;
+	padding: 2px 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
 	display: table;
-	text-align: center;
-	position: fixed;
-	z-index: 50;
 }
 
-.botao-voltar {
+.barra-acao-esquerda {
+	float: left;
+	display: table;
+	position: relative;
+	top: 5px;
+}
+
+.acao-esquerda-botao-voltar {
+	width: 20px;
+	height: 20px;
+	float: left;
+	position: relative;
+	top: 12px;
+}
+
+.acao-esquerda-contato {
+	float: right;
+	display: table;
+	position: relative;
+	margin-left: 6px;
+}
+
+.contato-foto {
+	width: 35px;
+	height: 35px;
+	border-radius: 35px;
+	overflow: hidden;
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	top: 5px;
+}
+
+.contato-foto > img {
+	width: 100%;
+	height: auto;
+}
+
+.contato-dados {
+	float: right;
+	position: relative;
+	top: 0px;
+}
+
+.contato-dados > p {
+	margin: 0;
+	line-height: 1.4em
+} 
+
+#contato-nome {
+	font-weight: 500;
+}
+
+#contato-status {
+	font-weight: 100;
+}
+
+.barra-acao-botoes {
+	float: right;
+	position: relative;
+	top: 12px;
+}
+
+.barra-acao-botoes a {
+	text-decoration: none;
+}
+
+
+.barra-acao-botoes img {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+
+/*   ------- Menu de opções ------   */
+
+.menu-opcoes {
+	z-index: 19;
+	width: 100%;
+	height: 200px;
+	padding: 10px;
+	background: #FFFFFF;
+	position: absolute;
+	top: 59px;
+}
+
+.menu-opcoes-anexo {
+	display: table;
+	width: 100%;
+	text-align: center;
+}
+
+.menu-opcoes-anexo ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-opcoes-anexo li {
+	float: left;
+	padding: 5px;
+	text-align: center;
+	width: 30%;
+}
+
+.opcoes-anexo-item img {
+	width: 45px;
+	height: 45px;
+	border-radius: 45px;
+}
+
+.opcoes-anexo-item a {
+	text-decoration: none;
+	color: #9F9F9F;
+	font-size: 12px;
+}
+
+.opcoes-anexo-item p {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*   ------ Área do chat --------- */
+.area-chat {
+	z-index: 15;
+	position: absolute;
+	width: 100%;
+	height: calc(100vh - 60px - 60px); /* subtrair "width" da barra de ações e do rodapé */
+	top: 60px; /* altura da barra de ações */
+	overflow-y: scroll; 
+	padding: 0px 10px;
+}
+
+.chat-mensagem, 
+.chat.mensagem2 {
+	width: 100%;
+	margin: 5px 0;
+	display: table;
+}
+
+.chat-mensagem-texto {
+	width: auto;
+	max-width: calc(100% - 14px); /* subtrair "width" da classe .chat-mensagem-ponta */
+	padding: 6px 10px;
+	border-radius: 6px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+	display: table;
+	position: relative;
+	z-index: 5;
+}
+
+.chat-mensagem-ponta {
+	width: 14px;  /* !important; alterar este valor implica alterações na classe .chat-mensagem-texto */
+	height: auto;
+	margin: 0;
+	margin-left: -4px;
+	top: 0;
+	position: relative;
+	z-index: 6;
+}
+
+.chat-mensagem-texto p {
+	margin: 0;
+	padding: 0;
 	float: left;
 }
 
-.status {
-	display: inline-block;
-	width: auto;
-	height: auto;
+.mensagem-texto-status {
+	float: right;
+	display: table;
+	margin-top: 3px;
+	margin-left: 7px;
 }
 
-.botao-menu {
-	background: #FDFDFD;
+.mensagem-texto-status p {
+	color: #879977;
+	float: left;
+	font-size: 13px;
+}
+
+.mensagem-texto-status img {
 	width: 20px;
-	height: 20px;
-	border-radius: 20px;
-	position: absolute;
-	left: 50%;
-	margin-left: -25px;
-	top: 77%;
-	z-index: 55;
+	height: 15px;
+	float: left;
+	margin-left: 5px;
 }
 
-.botao-menu-icon {
+/* ------------------------------------------------------- 
+Para se reaproveitar as classes .chat-mensagem-ponta
+e .chat-mensagem-texto foram extraidos o alinhamento e cor 
+das mensagens. Sendo necessário aplica-las com as classes
+abaixo. 
+-------------------------------------------------------- */
+
+.mensagem-esquerda-align {
+	float: left;
+}
+
+.mensagem-direita-align {
+	float: right;
+}
+
+.mensagem-esquerda-background {
+	background: #FFFFFF;
+}
+
+.mensagem-direita-background {
+	background: #E1FFC7;
+}
+/* ------------------------------------------------------- */
+
+
+
+/*   ------ Área do rodapé -------  */
+.area-mensagem {
+	z-index: 20;
 	width: 100%;
-	height: auto;
-}
-
-.menu {
-	position: absolute;
-	width: 100%;
-	height: auto;
-	margin: -10px;
-	top: 56px; 
-	background: #FDFDFD;
-	z-index: 45;
-	opacity: 0;
-	transition: all 0.2s ease-in-out;
-}
-
-.botao-menu:hover + .menu {
-	opacity: 1;
-}
-
-.chat {
-
-}
-
-footer {
-	width: 100%;
-	height: auto;
-	background: #FDFDFD;
+	height: 60px;
 	position: absolute;
 	bottom: 0;
-}
-
-.mensagem {
-	width: 100%;
 	display: table;
-	padding: 5px;
+	padding: 5px 10px;
 }
 
 .mensagem-campo {
 	float: left;
-	width: 70%;
+	position: relative;
+	width: calc(100% - 50px); /* subtrair "width" do botão de envio */
+}
+
+.campo-corpo {
 	margin: 0;
+	background: #FFFFFF;
+	border-radius: 8px;
+	padding: 5px 10px;
+	position: relative;
+	float: left;
+	width: calc(100% - 18px + 6px); /* subtrair "width" do icone de ponta e somar uma constante para ajusta a borda ao icone */
+	height: 47px;
+	position: relative;
+	z-index: 5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+.campo-corpo > img {
+	width: 27px; /* !important; alterar este valor implica alterações na classe .campo-corpo input */
+	height: 27px;
+	position: relative;
+	top: 5px;
+}
+
+.campo-corpo input {
+	font-size: 20px;
+	outline: none;
+	position: relative;
+	top: -2px;
+	border: none;
+	margin-left: 5px;
+	width: calc(100% - (27px * 2) - 13px);  /* subtrair "width" dos dois icones e subtrair uma constante para ajusta a borda ao icone */
+}
+
+.campo-ponta {
+	margin: 0;
+	margin-left: -15px; 
+	float: right;
+	width: 18px; /* !important; alterar este valor implica alterações na classe .campo-corpo */
+	height: auto;
+	position: relative;
+	z-index: 6;
 }
 
 .mensagem-botao-envio {
+	width: 50px; /* !important; alterar este valor implica alterações na classe .mensagem-corpo */
+	height: 50px;
 	float: right;
-	width: 28%;
-	margin: 0;
+	/* box-shadow: 0 2px 5px rgba(0, 0, 0, .2); */
 }

@@ -2,44 +2,129 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mobile App</title>
+	<meta name="viewport" content="width= device-width, initial-scale= 1.0">
+	<title>WhatsApp</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" href="img/icon-logo.png">
 </head>
 <body>
-	<header class="barra-acao sombra-menu">
-		<img src="img/icon-back.png" alt="" class="botao-voltar">
-		<div class="status">
-			<img src="img/icon-logged.png" alt="" class="status-icone">
-			<span class="nome-contato">José Wilians</span>
+	<header class="barra-acao">
+		<div class="barra-acao-esquerda">
+			<img class="acao-esquerda-botao-voltar" src="img/icone-voltar.png" alt="">
+			<div class="acao-esquerda-contato">
+				<div class="contato-foto">
+					<img src="img/avatar.png" alt="">
+				</div>
+				<div class="contato-dados">
+					<p id="contato-nome">Dennys</p>
+					<p id="contato-status">online</p>
+				</div>
+			</div>
 		</div>
-		<div class="botao-menu sombra-menu">
-			<img src="img/icon-down.png" alt="" class="botao-menu-icon">
+
+		<div class="barra-acao-botoes">
+			<a href="#" class="botao-ligar">
+				<img src="img/icone-ligar.png" alt="">
+				<!--
+				<i class="fa fa-phone fa-2x"></i>
+				-->
+			</a>
+			<a href="#" class="botao-anexo">
+				<img src="img/icone-anexo.png" alt="">
+			</a>
+			<a href="#" class="botao-opcoes">
+				<img src="img/icone-opcoes.png" alt="">
+			</a>
 		</div>
-		<nav class="menu">
-		<ul class="menu-lista">
-			<li class="menu-lista-item"><img src="img/icon-logged.png" alt=""><span>Nova conversa</span></li>
-			<li class="menu-lista-item"><img src="img/icon-logged.png" alt=""><span>Nova conversa</span></li>
-			<li class="menu-lista-item"><img src="img/icon-logged.png" alt=""><span>Nova conversa</span></li>
-			<li class="menu-lista-item"><img src="img/icon-logged.png" alt=""><span>Nova conversa</span></li>
-		</ul>
-	</nav>
 	</header>
-	<section class="chat">
-		
-	</section>
-	<footer>
-		<div class="mensagem">
-			<input type="text" class="mensagem-campo">
-			<a href="#" class="mensagem-botao-envio"><img src="" alt=""></button>
-		</div>
-		<div class="abas">
+
+	<nav class="menu-opcoes">
+		<div class="menu-opcoes-anexo">
 			<ul>
-				<li><a href="#"><img src="" alt=""></a></li>
-				<li><a href="#"><img src="" alt=""></a></li>
-				<li><a href="#"><img src="" alt=""></a></li>
-				<li><a href="#"><img src="" alt=""></a></li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-documento.png" alt="">
+						<p>Documento</p>
+					</a>
+				</li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-camera.png" alt="">
+						<p>Camera</p>
+					</a>
+				</li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-galeria.png" alt="">
+						<p>Galeria</p>
+					</a>
+				</li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-audio.png" alt="">
+						<p>Áudio</p>
+					</a>
+				</li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-local.png" alt="">
+						<p>Local</p>
+					</a>
+				</li>
+				<li class="opcoes-anexo-item">
+					<a href="">
+						<img src="img/icone-shared-contato.png" alt="">
+						<p>Contato</p>
+					</a>
+				</li>
 			</ul>
 		</div>
+	</nav>
+
+	<section class="area-chat">
+		<div class="chat-mensagem">
+			<div class="chat-mensagem-ponta mensagem-direita-align">
+				<img src="img/icone-balao-direita.png" alt="" class="">
+			</div>
+			<div class="chat-mensagem-texto mensagem-direita-align mensagem-direita-background">
+				<p name="mensagem-texto-conteudo">Dennys. Estou preocupado. A menina ainda não voltou como estao todos</p>
+				<div class="mensagem-texto-status">
+					<p name="chat-mensagem-horario">11:54</p>
+					<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
+				</div>
+			</div>
+		</div>
+
+		<div class="chat-mensagem">
+			<div class="chat-mensagem-ponta mensagem-esquerda-align">
+				<img src="img/icone-balao-esquerda.png" alt="" class="">
+			</div>
+			<div class="chat-mensagem-texto mensagem-esquerda-align mensagem-esquerda-background">
+				<p name="mensagem-texto-conteudo">O que houve?</p>
+				<div class="mensagem-texto-status">
+					<p name="chat-mensagem-horario">11:56</p>
+					<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="area-mensagem">
+		<div class="mensagem-campo">
+			<div class="campo-ponta">
+				<img src="img/icone-campo-texto2.png" alt="">
+			</div>
+			<div class="campo-corpo">
+				<img src="img/icone-emojicon.png" alt="">
+				<input type="text" placeholder="Digite aqui...">
+				<img src="img/icone-captura-imagem.png" alt="">
+			</div>
+		</div>
+
+		<a href="#">
+			<img src="img/icone-gravacao.png" alt="" class="mensagem-botao-envio">
+		</a>
 	</footer>
 </body>
 </html>
