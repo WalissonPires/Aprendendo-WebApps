@@ -2,6 +2,7 @@
 /*   -------- Geral ----------   */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500,100);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 
 * {
 	box-sizing: border-box;
@@ -117,7 +118,6 @@ body {
 
 	/* Valor para exibir o menu */
 	/* top: 59px; */
-
 	/* Valor para ocultar o menu */
 	top: -150px;
 }
@@ -174,10 +174,9 @@ body {
 	padding: 0px 10px;
 }
 
-.chat-mensagem, 
-.chat.mensagem2 {
+.chat-mensagem {
 	width: 100%;
-	margin: 5px 0;
+	margin: 8px 0;
 	display: table;
 }
 
