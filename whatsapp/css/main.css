@@ -110,11 +110,16 @@ body {
 .menu-opcoes {
 	z-index: 19;
 	width: 100%;
-	height: 200px;
+	height: auto;
 	padding: 10px;
 	background: #FFFFFF;
 	position: absolute;
-	top: 59px;
+
+	/* Valor para exibir o menu */
+	/* top: 59px; */
+
+	/* Valor para ocultar o menu */
+	top: -150px;
 }
 
 .menu-opcoes-anexo {
@@ -126,14 +131,18 @@ body {
 .menu-opcoes-anexo ul {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 0; 
+	display: table;
+	width: 100%;
+	height: auto;
 }
 
 .menu-opcoes-anexo li {
 	float: left;
 	padding: 5px;
 	text-align: center;
-	width: 30%;
+	width: 30%; /* Valor usado para deixar 3 itens por linha */
+	height: auto;
 }
 
 .opcoes-anexo-item img {
