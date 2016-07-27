@@ -103,8 +103,13 @@ body {
 	width: 30px;
 	height: 30px;
 	margin-left: 10px;
+	border-radius: 2px;
+	transition: all .2s ease-in-out;
 }
 
+.barra-acao-botoes img:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
 
 /*   ------- Menu de opções ------   */
 
@@ -116,10 +121,16 @@ body {
 	background: #FFFFFF;
 	position: absolute;
 
-	/* Valor para exibir o menu */
-	/* top: 59px; */
 	/* Valor para ocultar o menu */
 	top: -150px;
+	visibility: hidden;
+	transition: all .2s ease-in-out;
+}
+
+.menu-opcoes-aberto {
+	/* Valor para exibir o menu */
+	top: 59px;
+	visibility: visible;
 }
 
 .menu-opcoes-anexo {
@@ -317,3 +328,113 @@ abaixo.
 	float: right;
 	/* box-shadow: 0 2px 5px rgba(0, 0, 0, .2); */
 }
+
+/* ----- Menu popup ------- */
+.menu-popup {
+	width: calc(100% - 20px);
+	height: auto;
+	margin: 0 10px;
+	position: absolute;
+	bottom: 0;
+	background: #F3F3F3;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, .4);
+	z-index: 25;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s ease-in-out;
+}
+
+.menu-popup-aberto {
+	bottom: 0;
+	opacity: 1;
+	visibility: visible;
+}
+
+.menu-popup-lista {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-popup-lista-item {
+	border-bottom: 2px solid #ECECEC;
+	padding: 10px 12px;
+	cursor: pointer;
+}
+
+.menu-popup-lista-item:hover {
+	background: rgba(0, 0, 0, .02);
+}
+
+.menu-popup-lista-item a {
+	text-decoration: none;
+	color: #555555;
+}
+
+/* ------ Dialogo ------- */
+.dialogo-container {
+	z-index: 50;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, .5);
+
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s ease-in-out;
+}
+
+.dialogo-aberto {
+	opacity: 1;
+	visibility: visible;
+}
+
+.dialogo {
+	background: #FFFFFF;
+	max-width: 90%;
+	width: auto;
+	height: auto;
+	padding: 0;
+	border-radius: 2px;
+	display: table;
+
+	/* Alinhamento ! */
+	margin: 5% auto;
+	display: table;
+	top: 10%;
+}
+
+.dialogo-titulo {
+	display: inline-block;
+	margin: 10px 12px 0;
+	padding: 0;
+	color: #555555;
+	font-weight: 700;
+}
+
+.dialogo-conteudo {
+	padding: 10px 12px;
+	color: #555555;
+	font-weight: 400;
+	border-bottom: 1px solid #ECECEC;
+}
+
+.dialogo-botoes {
+	display: inline-block;
+	float: right;
+	padding: 15px 12px 15px;	
+}
+
+.dialogo-botao-positivo {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #048B75;
+	font-weight: 400;
+	padding: 8px 12px;
+	border-radius: 2px;
+}
+
+.dialogo-botao-positivo:hover {
+	background: rgba(0, 0, 0, .2);
+};

@@ -22,6 +22,21 @@ $('#input-mensagem').keyup(function (e) {
 	}
 });
 
+$('.botao-anexo').click(function (e) {
+	$('.menu-opcoes').toggleClass('menu-opcoes-aberto');
+});
+
+$('.botao-opcoes').click(function (e) {
+	$('.menu-popup').toggleClass('menu-popup-aberto');
+});
+
+$('.botao-ligar,.menu-popup-lista-item').click(function (e) {
+	$('.dialogo-container').addClass('dialogo-aberto');
+});
+
+$('.dialogo-botao-positivo').click(function (e) {
+	$('.dialogo-container').removeClass('dialogo-aberto');
+});
 
 
 /*  ----- Funções de apoio ----- */
