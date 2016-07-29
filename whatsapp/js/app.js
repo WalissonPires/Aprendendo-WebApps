@@ -49,8 +49,13 @@ $('.dialogo-botao-positivo').click(function (e) {
 });
 
 $('.mensagem-botao-envio').click(function(e) {
-	var keyEvent = jQuery.Event('keyup', { keyCode: 13});
-	$('#input-mensagem').trigger(keyEvent);
+
+	if ($('#input-mensagem').val() != "") {
+		var keyEvent = jQuery.Event('keyup', { keyCode: 13});
+		$('#input-mensagem').trigger(keyEvent);
+	} else {
+		$('.dialogo-container').addClass('dialogo-aberto');
+	}
 });
 
 
