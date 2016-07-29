@@ -336,7 +336,7 @@ body {
 	z-index: 6;
 }
 
-.mensagem-botao-envio {
+.mensagem-botao-envio-icone {
 	width: 50px; /* !important; alterar este valor implica alterações na classe .mensagem-corpo */
 	height: 50px;
 	float: right;

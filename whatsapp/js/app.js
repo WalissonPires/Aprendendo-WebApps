@@ -16,10 +16,20 @@
 
 $('#input-mensagem').keyup(function (e) {
 
-	if ((e.keyCode == 13) && ($('#input-mensagem').val() != ""))  {
-		enviarMensagem($('#input-mensagem').val());
-		return false;
+	var $input = $('#input-mensagem');
+
+	if ((e.keyCode == 13) && ($input.val() != ""))  {
+		enviarMensagem($input.val());
+		$input.val("");
 	}
+
+	if ($input.val() != "") {
+		$('.mensagem-botao-envio-icone').attr('src', 'img/icone-envio.png');
+	} else {
+		$('.mensagem-botao-envio-icone').attr('src', 'img/icone-gravacao.png');
+	}
+
+	return false;
 });
 
 $('.botao-anexo').click(function (e) {
@@ -36,6 +46,11 @@ $('.botao-ligar,.menu-popup-lista-item').click(function (e) {
 
 $('.dialogo-botao-positivo').click(function (e) {
 	$('.dialogo-container').removeClass('dialogo-aberto');
+});
+
+$('.mensagem-botao-envio').click(function(e) {
+	var keyEvent = jQuery.Event('keyup', { keyCode: 13});
+	$('#input-mensagem').trigger(keyEvent);
 });
 
 
@@ -107,8 +122,6 @@ function enviarMensagem(texto) {
 	});
 
 	rolarScroll();
-
-	$('#input-mensagem').val("");
 
 	falar(
 		texto, 
