@@ -82,33 +82,42 @@
 	</nav>
 
 	<section class="area-chat">
-		<!--
-		<div class="chat-mensagem">
-			<div class="chat-mensagem-ponta mensagem-direita-align">
-				<img src="img/icone-balao-direita.png" alt="" class="">
-			</div>
-			<div class="chat-mensagem-texto mensagem-direita-align mensagem-direita-background">
-				<p name="mensagem-texto-conteudo">Dennys. Estou preocupado. A menina ainda não voltou como estao todos</p>
-				<div class="mensagem-texto-status">
-					<p name="chat-mensagem-horario">11:54</p>
-					<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
-				</div>
-			</div>
-		</div>
 
-		<div class="chat-mensagem">
-			<div class="chat-mensagem-ponta mensagem-esquerda-align">
-				<img src="img/icone-balao-esquerda.png" alt="" class="">
+		<!-- O container abaixo armazena os modelos de mensagens usados pelo JS para criar novas mensagens. -->
+		<div id="chat-mensagem-modelo" style="display: none;">
+
+			<div name="chat-mensagem-direita">		
+				<div class="chat-mensagem">
+					<div class="mensagem-ponta">
+					  <div class="mensagem-ponta-solido"></div>
+					  <div class="mensagem-ponta-sombra"></div>
+					</div>
+					<div class="mensagem-texto">
+						<p name="mensagem-texto-conteudo">Oi</p>
+						<div class="mensagem-texto-status">
+							<p name="chat-mensagem-horario">11:54</p>
+							<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="chat-mensagem-texto mensagem-esquerda-align mensagem-esquerda-background">
-				<p name="mensagem-texto-conteudo">O que houve?</p>
-				<div class="mensagem-texto-status">
-					<p name="chat-mensagem-horario">11:56</p>
-					<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
+
+			<div name="chat-mensagem-esquerda">		
+				<div class="chat-mensagem">
+					<div class="mensagem-ponta mensagem-ponta-esquerda">
+					  <div class="mensagem-ponta-solido mensagem-ponta-solido-esquerda"></div>
+					  <div class="mensagem-ponta-sombra"></div>
+					</div>
+					<div class="mensagem-texto mensagem-texto-esquerda">
+						<p name="mensagem-texto-conteudo">Olá. Tudo bem?</p>
+						<div class="mensagem-texto-status">
+							<p name="chat-mensagem-horario">11:54</p>
+							<img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		-->
 	</section>
 
 	<footer class="area-mensagem">

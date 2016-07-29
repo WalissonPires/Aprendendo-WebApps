@@ -76,7 +76,7 @@ function falar(texto, callbackSuccess, callbackError) {
 
 function addMensagemEsqueda(mensagem) {
 
-	var msg = $('<div class="chat-mensagem"><div class="chat-mensagem-ponta mensagem-esquerda-align"><img src="img/icone-balao-esquerda.png" alt="" class=""></div><div class="chat-mensagem-texto mensagem-esquerda-align mensagem-esquerda-background"><p name="mensagem-texto-conteudo"></p><div class="mensagem-texto-status"><p name="chat-mensagem-horario"></p><img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza"></div></div></div>');
+	var msg = $($('#chat-mensagem-modelo').children().eq(1).html());
 
 	$('[name="mensagem-texto-conteudo"]', msg).html(mensagem.texto);
 	$('[name="chat-mensagem-horario"]', msg).html(mensagem.horario);
@@ -86,7 +86,7 @@ function addMensagemEsqueda(mensagem) {
 
 function addMensagemDireita(mensagem) {
 
-	var msg = $('<div class="chat-mensagem"><div class="chat-mensagem-ponta mensagem-direita-align"><img src="img/icone-balao-direita.png" alt="" class=""></div><div class="chat-mensagem-texto mensagem-direita-align mensagem-direita-background"><p name="mensagem-texto-conteudo"></p><div class="mensagem-texto-status"><p name="chat-mensagem-horario"></p><img src="img/icone-msg-visualizada.png" alt="" class="chat-mensagem-visualiza"></div></div></div>');
+	var msg = $($('#chat-mensagem-modelo').children().eq(0).html());
 
 	$('[name="mensagem-texto-conteudo"]', msg).html(mensagem.texto);
 	$('[name="chat-mensagem-horario"]', msg).html(mensagem.horario);
