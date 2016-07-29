@@ -58,6 +58,10 @@ $('.mensagem-botao-envio').click(function(e) {
 	}
 });
 
+$('.campo-corpo img').click(function(e) {
+	$('.dialogo-container').addClass('dialogo-aberto');
+});
+
 
 /*  ----- Funções de apoio ----- */
 

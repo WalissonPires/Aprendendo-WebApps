@@ -289,23 +289,31 @@ body {
 	padding: 5px 10px;
 }
 
+.area-mensagem .mensagem-ponta-solido {
+	border-color: #fff transparent transparent #fff;
+}
+
 .mensagem-campo {
 	float: left;
 	position: relative;
 	width: calc(100% - 50px); /* subtrair "width" do botão de envio */
 }
 
+.mensagem-campo .mensagem-ponta {
+	left: -17px;
+}
+
 .campo-corpo {
 	margin: 0;
 	background: #FFFFFF;
-	border-radius: 8px;
+	border-radius: 5px;
 	padding: 5px 10px;
 	position: relative;
 	float: left;
 	width: calc(100% - 18px + 6px); /* subtrair "width" do icone de ponta e somar uma constante para ajusta a borda ao icone */
 	height: 47px;
 	position: relative;
-	z-index: 5;
+	z-index: 2;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 }
 
