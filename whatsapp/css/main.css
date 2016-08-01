@@ -142,9 +142,9 @@ body {
 .menu-opcoes-anexo ul {
 	list-style: none;
 	padding: 0;
-	margin: 0; 
+	margin: 0 auto; 
 	display: table;
-	width: 100%;
+	width: auto;
 	height: auto;
 }
 
@@ -152,7 +152,7 @@ body {
 	float: left;
 	padding: 5px;
 	text-align: center;
-	width: 30%; /* Valor usado para deixar 3 itens por linha */
+	width: 33.33%; /* Valor usado para deixar 3 itens por linha */
 	height: auto;
 }
 
@@ -459,4 +459,12 @@ body {
 
 .dialogo-botao-positivo:hover {
 	background: rgba(0, 0, 0, .2);
-};
+}
+
+
+@media screen and (min-width: 630px) {
+
+	.menu-opcoes-anexo li {
+		width: 100px;
+	}
+}
