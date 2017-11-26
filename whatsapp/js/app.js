@@ -34,10 +34,28 @@ $('#input-mensagem').keyup(function (e) {
 
 $('.botao-anexo').click(function (e) {
 	$('.menu-opcoes').toggleClass('menu-opcoes-aberto');
+
+	if ($('.menu-opcoes').hasClass('menu-opcoes-aberto')) {
+
+		setTimeout(function() {
+			$(document).on('click', esconderMenuOpcoes);
+		}, 500);
+	}
+	else
+		$(document).off('click', esconderMenuOpcoes);
 });
 
 $('.botao-opcoes').click(function (e) {
 	$('.menu-popup').toggleClass('menu-popup-aberto');
+
+	if ($('.menu-popup').hasClass('menu-popup-aberto')) {
+
+		setTimeout(function() {
+			$(document).on('click', esconderMenuPopup);
+		}, 500);
+	}
+	else
+		$(document).off('click', esconderMenuPopup);
 });
 
 $('.botao-ligar,.menu-popup-lista-item').click(function (e) {
@@ -65,12 +83,22 @@ $('.campo-corpo img').click(function(e) {
 
 /*  ----- Funções de apoio ----- */
 
+function esconderMenuPopup() {
+	$('.menu-popup').removeClass('menu-popup-aberto');
+	$(document).off('click', esconderMenuPopup);	
+}
+
+function esconderMenuOpcoes() {
+	$('.menu-opcoes').removeClass('menu-opcoes-aberto');
+	$(document).off('click', esconderMenuOpcoes);	
+}
+
 function falar(texto, callbackSuccess, callbackError) {
 
 	texto = encodeURIComponent(texto);
 
 	$.ajax({
-		url: 'http://www.personalityforge.com/api/chat/?apiKey=jDc2JqWuADdbXLO7&chatBotID=6&message=' + texto + '&externalID=abc-639184572&firstName=Tugger&lastName=Sufani&gender=m',
+		url: 'https://www.personalityforge.com/api/chat/?apiKey=jDc2JqWuADdbXLO7&chatBotID=6&message=' + texto + '&externalID=abc-639184572&firstName=Tugger&lastName=Sufani&gender=m',
 		method: 'GET',
 		success: function (resposta) {
 

@@ -185,6 +185,18 @@ body {
 	padding: 5px 10px 0;
 }
 
+.area-chat::-webkit-scrollbar {
+    width: 0.7em;
+}
+ 
+.area-chat::-webkit-scrollbar-track {
+    
+}
+ 
+.area-chat::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.3);
+}
+
 .chat-mensagem {
   background: transparent;
   position: relative;
