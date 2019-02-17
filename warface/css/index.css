@@ -1,0 +1,633 @@
+
+/* ==== Geral 
+   ================================= */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #444;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+body{
+    overflow-y: auto; 
+}
+
+/* ==== Helps
+   ====================================== */
+.bgx-primary {
+    background-color: rgba(0,0,0,.6);
+}
+
+.txt-primary {
+    color: #7e7e7e;
+}
+
+.flex-ileft {
+    position: absolute;
+    right: 0;
+}
+
+.f-right {
+    float: right;
+}
+
+.fx-al-l {
+    justify-content: flex-start;
+}
+
+.fs-05 {
+    font-size: 0.8em;
+}
+
+.fs-1 {
+    font-size: 1em;
+}
+
+.fs-2 {
+    font-size: 1.2em;
+}
+
+.fs-3 {
+    font-size: 1.5em;
+}
+
+
+.btn-fs {
+    font-size: 0.8em;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 18px;
+    text-decoration: none;
+    background-color: transparent;
+    color: orangered;
+    border: 1px solid orangered;
+    cursor: pointer;
+    transition: background-color .4s ease;
+    outline: none;
+    text-transform: uppercase;   
+    font-size: 0.7em;
+}
+
+button:hover
+/*button:active,*/
+/*button:focus*/ {
+    background-color: rgba(253, 73, 7, 0.15);    
+}
+
+.btn-invert {
+    background-color: orangered;
+    color: #fff;
+}
+
+.btn-invert:hover {
+    background-color: orangered;
+}
+
+.btn-tri-l::after {
+    content: '';
+    border-width: 1.1em;
+    border-color: transparent;
+    border-right-color: orangered;
+    border-style: solid;
+    position: absolute;
+    top: -1px;
+    left: -2.3em;
+}
+
+.wrapper-scroll {
+    overflow-y: auto; 
+}
+
+.wrapper-scroll::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .wrapper-scroll::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .wrapper-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(230, 230, 230, 0.38);
+  }
+
+/* ==== Page 
+   ====================================== */
+.page-view {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-header {
+    height: auto;        
+}
+
+.page-content {
+    height: auto;
+    width: 70%;
+    margin: 0 auto;    
+}
+
+.page-footer {
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==== Main Menu
+   ========================================= */
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    width: 70%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-menu-item {
+    flex: 1;
+}
+
+.main-menu-item:first-child {
+    flex: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-nav .divider {
+    margin-left: 40px;
+}
+
+.menu-nav-item {
+    flex: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+    color: #888;
+    cursor: pointer;
+    transition: color .4s ease;
+}
+
+.menu-nav-item.icon-only {
+    padding: 0 10px;
+    font-size: 1.2em;
+}
+
+.menu-nav-item:hover {
+    color: #fff;
+}
+
+
+.menu-logo {
+    height: 30px;    
+    width: auto;
+    margin: 5px 0;
+}
+
+/* === Game Mods 
+   ============================== */
+.game-mods {
+   /* padding: 10px 0;*/ 
+}
+
+.nav-menu,
+.game-mods-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu.nv-vertical {
+    flex-direction: column;
+}
+
+.nav-menu .nav-item,
+.game-mods-nav .nav-item {
+    padding: 10px 0;
+    margin: 0 10px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    color: #fff;
+    transition: color .4s ease;
+    cursor: pointer;
+}
+
+.nav-menu .nav-item:hover,
+.game-mods-nav .nav-item:hover,
+.game-mods-nav .nav-item.active {
+    color: orangered;
+    border-bottom-color: orangered;
+}
+
+.nav-menu .nav-item[disabled] {
+    color: #555;
+    pointer-events: none;
+}
+
+.nav-menu .nav-item.nvi-black {
+    border-bottom: none;
+    border-right: 2px solid transparent;
+}
+
+.nav-menu .nav-item.nvi-black:hover,
+.nav-menu .nav-item.nvi-black.active {
+    background-color: #000;
+    border-bottom-color: transparent;
+    color: white;
+    border-right-color: orangered;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.card-coop {
+    border: 1px solid #666;
+    height: 165px;
+    width: 31%;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    transition: border-color .4s ease;
+    cursor: pointer;
+}
+
+.card-coop:hover {
+    border-color: orangered;
+}
+
+.card-coop-bg {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.card-coop-title {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background-color: rgba(0,0,0,.9);
+    color: #fff;
+    margin: 0;
+    padding: 0px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.card-coop-info {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    background-color: orangered;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.card-coop:hover .card-coop-info {
+    opacity: 1;
+}
+
+.txt-spotlight {
+    color: orangered;
+    font-weight: bold;
+}
+
+.card-coop-title .txt-spotlight {
+    margin: 0 10px;
+}
+
+.card-coop-level {
+    height: 2em;
+    width: auto;
+}
+
+.level-0 {
+    width: 0;
+    padding: 4px 7px;
+}
+
+.level-1 {
+    background-color: rgb(60, 161, 60);
+    padding: 4px 7px;
+    margin-right: 10px; 
+}
+
+.level-2 {
+    background-color: orange;
+    padding: 4px 7px;
+    margin-right: 10px;
+}
+
+.level-3 {
+    background-color: rgb(201, 55, 55);
+    padding: 4px 7px;
+    margin-right: 10px;
+}
+
+.coop-tab-toolbar {
+    position: relative;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    margin: 10px 15px;
+    flex: 1;
+}
+
+
+.user-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.patente {
+    height: 30px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.user-data  .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-data .nickname {
+
+}
+
+.user-data .vip {
+    color: #777;
+    font-size: .8em;
+}
+
+
+.user-boosts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.boost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.boost.xp {
+    color: #fed32c;
+}
+
+.boost.pf {
+    color: #72c9f4;
+}
+
+.boost.gp {
+    color: #95e979;
+}
+
+
+
+.user-coins {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;   
+}
+
+.coin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+
+
+.page-channels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; 
+    font-size: .8em;
+}
+
+.page-channels .nav-menu {
+    align-items: flex-start;
+}
+
+.page-channels-item:nth-child(1) {    
+    display: flex;
+}
+
+.pc-1 .nav-item {
+    margin: 0;
+    padding: 9px 10px;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.page-channels .page-channels-item:nth-child(2) {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.carosel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.carosel-item {
+    position: absolute;
+    z-index: 1;
+    top: -200px;
+    left: 0;
+    transition: top .6s ease;
+}
+
+.carosel-item.active {
+    top: 0px;
+}
+
+.carosel-item > img {
+    height: 200px;
+    width: auto;
+}
+
+.carosel-index {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+}
+
+.carosel-index .index {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border: 2px solid orangered;
+    background-color: rgba(0,0,0,.3);
+    margin-right: 8px;
+    transition: background-color .4s ease;
+    cursor: pointer;
+}
+
+.carosel-index .index:hover,
+.carosel-index .index.active {
+    background-color: rgba(253, 73, 7, 0.699);
+}
+
+.page-channels-item:nth-child(3) {
+    min-width: 30%;
+    display: flex;
+}
+
+.pc-3 {
+    padding: 5px 7px 0 18px;
+}
+
+.frends-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.frends-list .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2em;    
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+.frends-list .header i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.frends {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.frends li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2px 0;
+    font-size: 1.2em;
+}
+
+.frend-off {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: #484848;
+}
+
+.frend-on {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgb(92, 230, 255);
+}
+
+.frends .patente {
+    height: 17px;
+    margin: 0 7px;
+}
